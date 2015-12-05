@@ -1,0 +1,20 @@
+package chain_of_responsibility;
+
+/**
+ * Ä£·ÂÇëÇó
+ * @author skywalker
+ *
+ */
+public class Request {
+
+	private String requestStr;
+
+	public String getRequestStr() {
+		return requestStr;
+	}
+
+	public void setRequestStr(String requestStr) {
+		this.requestStr = requestStr;
+	}
+	
+}
