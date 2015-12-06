@@ -23,7 +23,7 @@ public class UserAccountDao {
 	public UserAccountDao(boolean useMongoDB, int capacity, CachePolicy policy) {
 		initCapacity(capacity);
 		initDB(useMongoDB);
-		this.policy = policy;
+		intiPolicy(policy);
 	}
 	
 	/**
@@ -48,6 +48,20 @@ public class UserAccountDao {
 		} else {
 			DBManager.createVirtualDB();
 		}
+	}
+	
+	/**
+	 * 初始化缓存策略，如果是BEHIND策略，添加jvm关闭钩子，将缓存flush进入数据库
+	 * @param policy
+	 */
+	private void intiPolicy(CachePolicy policy) {
+		this.policy = policy;
+		if (policy == CachePolicy.BEHIND) {
+			Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+				flushCache();
+			}));
+		}
+		cache.clear();
 	}
 	
 	/**
