@@ -16,6 +16,12 @@ public class AlarmMgr {
 	
 	private AlarmMgr() {
 		alarmSendingThread = new AlarmSendingThread();
+	}
+	
+	/**
+	 * 不要再构造函数中启动线程!!!
+	 */
+	public void init() {
 		alarmSendingThread.start();
 	}
 	
