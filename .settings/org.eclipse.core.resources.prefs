@@ -1,5 +1,12 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/java/async/App.java=GBK
+encoding//src/main/java/async/AsyncExecutor.java=GBK
+encoding//src/main/java/builder/App.java=GBK
+encoding//src/main/java/builder/House.java=GBK
+encoding//src/main/java/chain_of_responsibility/FilterChain.java=GBK
+encoding//src/main/java/reactor/Acceptor.java=GBK
+encoding//src/main/java/reactor/Reactor.java=GBK
+encoding//src/main/java/reactor/SocketReadHandler.java=GBK
 encoding//src/main/resources=UTF-8
 encoding//src/test/java=UTF-8
-encoding/<project>=UTF-8
